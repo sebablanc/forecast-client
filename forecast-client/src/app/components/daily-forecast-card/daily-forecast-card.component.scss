@@ -1,0 +1,44 @@
+.daily-container{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    height: 250px;
+
+    .day-info{
+        display: inline-flex;
+        font-size: 25px;
+        height: 178px;
+        text-align: center;
+        
+        .day{
+            padding: 0 95px;
+
+            .icon-display{
+                width: 150px;
+            }
+
+            .celsius-display,
+            .fahrenheit-display{
+                margin: 10px 0;
+                text-align: center;
+            }
+            .celsius-display:after {
+                content: "\2103";
+            }
+
+            .fahrenheit-display:after {
+                content: "\2109";
+            }
+        }
+
+        .day:hover{
+            .icon-display{
+                animation: rotation 2s infinite linear;
+            }
+        }
+
+    }
+    .right-border{
+        border-right: 1px solid gray;
+        height: 240px;
+    }
+}

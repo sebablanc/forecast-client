@@ -1,0 +1,82 @@
+.current-container{
+    .current-data{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        max-height: 204px;
+        margin: 30px 0;
+
+        .location-display{
+            grid-column: 1;
+            grid-row: 1;
+            color: gray;
+            .country-display{
+                font-size: 12px;
+            }
+            
+            .city-display{
+                font-size: 15px;
+            }
+        }
+
+        .icon-display{
+            grid-column: 2/span 2;
+            grid-row: 1 / span 5;
+            justify-self: center;
+            align-self: self-start;
+            width: 175px;
+        }
+
+        .day-display{
+            grid-column: 1;
+            grid-row: 2;
+            font-size: 35px;
+            padding: 20px 0;
+        }
+
+        .forest-display{
+            grid-column: 1;
+            grid-row: 3;
+            font-size: 25px;
+        }
+
+        .celsius-display{
+            grid-column: 1;
+            grid-row: 4;
+            font-size: 50px;
+            padding: 40px 20px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .celsius-display:after {
+            content: "\2103";
+            font-size: 23px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .fahrenheit-display{
+            grid-column: 1;
+            grid-row: 5;
+            font-size: 25px;
+        }
+
+        .fahrenheit-display:after {
+            content: "\2109";
+            font-size: 25px;
+        }
+
+        .extra-info-display{
+            grid-column: 2;
+            grid-row: 4/ span 2;
+            align-self: flex-end;
+            text-align: right;
+        }
+    }
+
+    .current-data:hover{
+        .icon-display{
+            animation: rotation 2s infinite linear;
+        }
+    }
+}

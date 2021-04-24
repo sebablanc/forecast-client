@@ -1,0 +1,44 @@
+<div class="form-container card">
+    <div class="title blue-underlined-title">
+        <h1>Seleccioná la zona</h1>
+    </div>
+    <form class="formGroup" [formGroup]="cityForm" (ngSubmit)="search()">
+      
+        <label class="form-label">
+            <div class="label-text">País</div>
+            <input type="text" class="form-input" focus placeholder="Seleccioná un país" formControlName="pais" [matAutocomplete]="autoPais" (keyup)="paisChanged($event)">
+            <mat-autocomplete #autoPais="matAutocomplete" (optionSelected)="getAllCities()">
+                <mat-option *ngFor="let p of filteredPaises" [value]="p">
+                  {{p.name}}
+                </mat-option>
+              </mat-autocomplete>
+            <div *ngIf="pais.invalid && (pais.dirty || pais.touched)"
+                class="alert alert-danger">
+
+                <div *ngIf="pais.errors.required">
+                    El país es requerido.
+                </div>
+            </div>
+        </label>
+        
+      
+        <label class="form-label">
+          <div class="label-text">Ciudad</div>
+          <input type="text" class="form-input" placeholder="Seleccioná una ciudad" formControlName="ciudad" [matAutocomplete]="autoCiudades" (keyup)="ciudadChange($event)">
+          <mat-autocomplete #autoCiudades="matAutocomplete">
+            <mat-option *ngFor="let ciudad of filteredCiudades" [value]="ciudad">
+              {{ciudad}}
+            </mat-option>
+          </mat-autocomplete>
+          <div *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)"
+                class="alert alert-danger">
+
+                <div *ngIf="ciudad.errors.required">
+                    La ciudad es requerida.
+                </div>
+            </div>
+        </label>
+      
+        <button class="btn form-button" type="submit" mat-raised-button>BUSCAR</button>
+      </form>
+</div>

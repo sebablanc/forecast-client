@@ -1,0 +1,23 @@
+<div class="current-container card">
+    <div class="title blue-underlined-title">
+        <h1>Reporte Actual</h1>
+    </div>
+    <div *ngIf="city && current" class="current-data">
+        <div class="location-display">
+            <div class="country-display">{{ city.pais.translations ? city.pais.translations.es : city.pais }}</div>
+            <div class="city-display">{{ city.ciudad }}</div>
+        </div>
+        <img class="icon-display" [src]="getIcon()">
+        <div class="day-display">{{ currentDay }}</div>
+
+        <div class="forest-display">{{ current.weather[0].description | uppercase }}</div>
+        <div class="celsius-display">{{current.temp}}</div>
+        <div class="fahrenheit-display">{{((current.temp * 9)/5) + 32 | number: '1.2-2'}}</div>
+        <div class="extra-info-display">
+            <!-- EL API UTILIZADO NO POSEE LA PROBABILIDAD DE PRECIPITACIONES -->   
+            <div class="prob-precipitaciones-display">Prob. de precipitaciones: 0%</div>
+            <div class="humedad-display">Humedad: {{current.humidity}}%</div>
+            <div class="viento-display">Viento: a {{current.wind_speed}}km/h</div>
+        </div>
+    </div>
+</div>

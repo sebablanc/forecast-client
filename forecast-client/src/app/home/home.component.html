@@ -1,0 +1,19 @@
+
+<div *ngIf="isLoading" class="loading-container">
+    <mat-progress-spinner
+        class="spinner"
+        mode="indeterminate">
+    </mat-progress-spinner>
+</div>
+
+<div class="home-container">
+    <div class="home-title title orange-underlined-title">
+        <h1>SERVICIO DEL CLIMA</h1>
+    </div>
+
+    <div class="home-info">
+        <app-city-form class="grid-item" (dataSelected)="searchForecast($event)"></app-city-form>
+        <app-current-forecast-card class="grid-item" [current]="currentForecast" [city]="city"></app-current-forecast-card>
+        <app-daily-forecast-card class="grid-item entire-row" [dailyList]="dailyForecast"></app-daily-forecast-card>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+}
+html, body { height: 100%; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #f2f2f1;
+    min-height: 100%;
+}
+
+.btn{
+    background-color: #fd6657;
+    color: white;
+    margin-top: 10px !important;
+    width: 100%;
+}
+
+.alert-danger{
+    color: red;
+    font-size: 10px;
+    text-align: left;
+}
+
+.mat-menu-panel {
+    padding: 0 10px;
+}
+
+.orange-av-color{
+    background-color: #fd6657;
+}
+
+.entire-row{
+    grid-column: 1 / span 2;
+}
+
+.card{
+    background-color: white;
+    padding: 20px;
+    height: 100%;
+    box-shadow: 2px 2px 5px 2px gray;
+}
+
+.title{
+    text-align: center;
+    color: #314284;
+    width: 100%;
+
+    h1{
+        margin: 5px;
+        font-weight: 500;
+    }
+}
+
+.blue-color{
+    color: #314284;
+}
+
+.blue-underlined-title{
+    border-bottom: 3px solid #314284;
+}
+
+.orange-underlined-title{
+    border-bottom: 3px solid #fd6657;
+}
+
+.form-label{
+    display: block;
+    font-size: 20px;
+    margin: 30px 0;
+    .label-text{
+        margin-bottom: 10px;
+    }
+}
+
+.form-input{
+    width: 98%;
+}
+
+.error-snackbar {
+    background-color: red;
+    color: white;
+}
+
+
+@keyframes rotation {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(359deg);
+    }
+}

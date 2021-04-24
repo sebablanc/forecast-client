@@ -1,0 +1,11 @@
+<div class="daily-container card">
+    <div class="day-info" *ngFor="let day of dailyList; index as i" [ngClass]="{'right-border': (i < 4)}">
+        <div class="day" >
+            <div class="blue-color">{{days[i]}}</div>
+            <img class="icon-display" [src]="getIcon(day)">
+            <div class="celsius-display">{{ day.temp.max }}</div>
+            <div class="fahrenheit-display">{{((day.temp.max* 9)/5) + 32 | number: '1.2-2'}}</div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+<div class="header-container orange-av-color">
+    <img class="logo" src="../../../assets/logo.svg" alt="">
+    <button class="menuButton" mat-stroked-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        {{!user ? 'INICIAR SESIÓN' : 'Hola '+user.usuario+'!'}} <mat-icon>person</mat-icon>
+    </button>
+
+    <mat-menu class="myMenu" #menu="matMenu" yPosition="below" xPosition="before">
+        <app-form-login *ngIf="!user" (click)="$event.stopPropagation()"></app-form-login>
+        <button *ngIf="user" class="btn" mat-raised-button (click)="cerrarSesion()">CERRAR SESIÓN</button>
+    </mat-menu>
+</div>

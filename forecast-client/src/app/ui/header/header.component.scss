@@ -1,0 +1,17 @@
+.header-container{
+    padding: 5px 10%;
+    position: relative;
+    color: white;
+    .logo{
+        width: 200px;
+        min-height: 36px;
+    }
+
+    .menuButton{
+        position: absolute;
+        left: 80%;
+        font-weight: bolder;
+        font-size: 11px;
+        min-width: 131px;
+    }
+}
